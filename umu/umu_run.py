@@ -547,6 +547,7 @@ def rearrange_gamescope_baselayer_order(  # noqa
 
 
 def set_gamescope_baselayer_order(rearranged: list[int]) -> None:  # noqa
+    log.error("we rolling boys my god")
     try:
         d = display.Display(":0")
         log.error("we rolling boys")
@@ -569,6 +570,7 @@ def set_gamescope_baselayer_order(rearranged: list[int]) -> None:  # noqa
 
 
 def window_setup(gamescope_baselayer_sequence: list[int]) -> None:  # noqa
+    log.error("we rolling boys")
     if gamescope_baselayer_sequence:
         # Rearrange the sequence
         rearranged_sequence, steam_assigned_layer_id = (

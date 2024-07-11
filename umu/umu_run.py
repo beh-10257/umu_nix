@@ -549,6 +549,7 @@ def rearrange_gamescope_baselayer_order(  # noqa
 def set_gamescope_baselayer_order(rearranged: list[int]) -> None:  # noqa
     try:
         d = display.Display(":0")
+        print("we rolling boys")
         root = d.screen().root
 
         # Intern the atom for GAMESCOPECTRL_BASELAYER_APPID

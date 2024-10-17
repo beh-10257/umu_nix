@@ -1,7 +1,7 @@
 {pyth1 ,python3Packages , umu-launcher, pkgs, ...}:
 python3Packages.buildPythonPackage {
   name = "umu-launcher";
-  version = "1.1.3";
+  version = "1.1.3-${umu-launcher.shortRev}";
   src = umu-launcher;
   pyproject = false;
   depsBuildBuild = [
@@ -10,14 +10,15 @@ python3Packages.buildPythonPackage {
     pkgs.scdoc
     pkgs.git
     pkgs.python3Packages.installer
-    (pkgs.hatch.overrideAttrs (prev: {
-      disabledTests = prev.disabledTests ++ [
-        "test_field_readme"
-        "test_field_string"
-        "test_field_complex"
-        "test_plugin_dependencies_unmet"
-      ];
-    }))
+    pkgs.hatch
+    #(pkgs.hatch.overrideAttrs (prev: {
+    #  disabledTests = prev.disabledTests ++ [
+    #    "test_field_readme"
+    #    "test_field_string"
+    #    "test_field_complex"
+    #    "test_plugin_dependencies_unmet"
+    #  ];
+    #}))
     pkgs.python3Packages.build
   ];
   propagatedBuildInputs = [

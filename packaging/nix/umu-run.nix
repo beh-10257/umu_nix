@@ -1,6 +1,7 @@
-{ package, buildFHSEnv, writeShellScript, ...}:
+{ package, buildFHSEnv, writeShellScript,version, ...}:
 buildFHSEnv {
-  pname = "umu-run";
+  name = "umu-run";
+  version = "${version}";
   runScript = writeShellScript "umu-run-shell" ''
     ${package}/bin/umu "$@"
   '';

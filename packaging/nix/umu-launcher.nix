@@ -1,7 +1,7 @@
 {pyth1 ,python3Packages , umu-launcher, pkgs,version, ...}:
 python3Packages.buildPythonPackage {
   version = "${version}";
-  pname = "umu-launcher-${version}";
+  pname = "umu-launcher";
   #version = "1.1.3-${umu-launcher.shortRev}";
   src = umu-launcher;
   pyproject = false;

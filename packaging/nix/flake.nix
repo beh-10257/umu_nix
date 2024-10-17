@@ -15,6 +15,6 @@
     umu-package = nixpk.callPackage ./umu-launcher.nix { umu-launcher=umu-launcher-src; pyth1=pyth; };
     umu-run = nixpk.callPackage ./umu-run.nix { package=umu-package; };
   in{
-    packages.x86_64-linux.umu = nixpk.callPackage ./combine.nix { env=umu-run; package=umu-package; };
+    packages.x86_64-linux.umu = nixpk.callPackage ./combine.nix { env=umu-run; package=umu-package; version = "1.1.3"; };
   };
 }

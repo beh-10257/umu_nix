@@ -1,4 +1,4 @@
-{pyth1 ,python3Packages , umu-launcher, pkgs,version ? "1.1.3", ...}:
+{pyth1 ,python3Packages , umu-launcher, pkgs,version, ...}:
 python3Packages.buildPythonPackage {
   name = "umu-launcher";
   #version = "1.1.3-${umu-launcher.shortRev}";

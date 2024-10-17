@@ -10,11 +10,12 @@
   in
   let
   pyth = nixpk.pkgs.python3;
+  version = "1.1.3";
   in
   let
-    umu-package = nixpk.callPackage ./umu-launcher.nix { umu-launcher=umu-launcher-src; pyth1=pyth; };
+    umu-package = nixpk.callPackage ./umu-launcher.nix { umu-launcher=umu-launcher-src; pyth1=pyth; version = "${version}"; };
     umu-run = nixpk.callPackage ./umu-run.nix { package=umu-package; };
   in{
-    packages.x86_64-linux.umu = nixpk.callPackage ./combine.nix { env=umu-run; package=umu-package; version = "1.1.3"; };
+    packages.x86_64-linux.umu = nixpk.callPackage ./combine.nix { env=umu-run; package=umu-package; version = "${version}"; };
   };
 }

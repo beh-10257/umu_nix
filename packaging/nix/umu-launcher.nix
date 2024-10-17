@@ -11,7 +11,7 @@ python3Packages.buildPythonPackage {
     pkgs.scdoc
     pkgs.git
     pkgs.python3Packages.installer
-    #pkgs.hatch
+    pkgs.hatch
     #(pkgs.hatch.overrideAttrs (prev: {
     #  disabledTests = prev.disabledTests ++ [
     #    "test_field_readme"

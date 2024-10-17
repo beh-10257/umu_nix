@@ -1,6 +1,6 @@
 { package, buildFHSEnv, writeShellScript, ...}:
 buildFHSEnv {
-  name = "umu-run";
+  pname = "umu-run";
   runScript = writeShellScript "umu-run-shell" ''
     ${package}/bin/umu "$@"
   '';

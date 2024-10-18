@@ -24,6 +24,7 @@ python3Packages.buildPythonPackage {
   ];
   propagatedBuildInputs = [
     pyth1
+    pkgs.bubblewrap
     pkgs.python3Packages.xlib
     pkgs.python3Packages.filelock
   ];

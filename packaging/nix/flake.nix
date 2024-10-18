@@ -1,7 +1,13 @@
 {
   description = "umu universal game launcher";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs = {
+      type = "github";
+      owner = "NixOS";
+      repo = "nixpkgs";
+      ref = "master";
+      rev = "16a8db078642abcacbeaab8ce4c5267857f18ff2";
+    };
   };
   outputs = { self, nixpkgs }:
   let

@@ -5,6 +5,8 @@ on:
     branches: [ "main" ]
   pull_request:
     branches: [ "main" ]
+  release:
+    types: [published]
 
 jobs:
   build:
@@ -17,7 +19,7 @@ jobs:
       run: dnf install -y git
 
     - name: Checkout repository
-      uses: actions/checkout@v3
+      uses: actions/checkout@v4
 
     - name: Configure Git safe directory
       run: git config --global --add safe.directory "$GITHUB_WORKSPACE"
@@ -33,7 +35,7 @@ jobs:
         cp -r . ~/rpmbuild/SOURCES/umu-launcher
         rpmbuild -ba packaging/rpm/umu-launcher.spec
 
-    - name: Upload RPM
+    - name: Fedora-40
       uses: actions/upload-artifact@v4.0.0
       with:
         name: umu-launcher-rpm
